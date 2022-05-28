@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:34:36 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/28 14:28:19 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/28 18:51:34 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_holder	*ft_inicialize_placeholder(void)
 	holder->width = 0;
 	holder->precision = -1;
 	holder->padding = ' ';
-	holder->conversion = '\0';
+	holder->specifier = '\0';
 	holder->*argument = NULL;
 	holder->*prefix = ft_strup("");
 	holder->len = 0;

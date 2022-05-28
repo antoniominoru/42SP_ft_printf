@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:48:44 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/28 15:08:36 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/28 19:15:49 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	ft_placeholder(t_format *fmt)
 	fmt->i++;
 	h = ft_inicialize_placeholder();
 	ft_format_specifiers(fmt, h);
-	if (holder->conversion)
+	if (holder->specifier)
 	{
-		ft_type_conversion(fmt, h); //criar
+		ft_type_specifier(fmt, h);
 		write(1, h->argument, h->len);
 		fmt->len += h->len;
 		free(h->prefix);
