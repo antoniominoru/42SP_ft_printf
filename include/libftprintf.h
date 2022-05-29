@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:10:53 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/29 15:10:46 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/29 21:43:44 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@
 # define DECIMAL_BASE "0123456789"
 # define HEXADECIMAL_L_BASE "0123456789abcdef"
 # define HEXADECIMAL_U_BASE "0123456789ABCDEF"
-# define OCTAL_BASE "01234567"
 
 # define SPACE ' '
 
@@ -72,9 +71,11 @@ void	ft_fs_specifier(t_format *fmt, t_holder *h);
 // Adicional function to LIBFT
 char	*ft_appendchr(char const *s, char const ch);
 char	*ft_strndup(const char *s1, size_t n);
+char	*ft_uitoa(unsigned long nbr, char *base);
 
 // Convert functions
 void	ft_convert_c(t_format *fmt, t_holder *h);
 void	ft_convert_s(t_format *fmt, t_holder *h);
+void	ft_convert_ux(t_format *fmt, t_holder *h, char *base);
 
 #endif
