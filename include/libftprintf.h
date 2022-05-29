@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:10:53 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/29 21:43:44 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/29 21:49:33 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define P_HOLDER_PRECISION '.'
 
 # define DECIMAL_BASE "0123456789"
+# define OCTAL_BASE "01234567"
 # define HEXADECIMAL_L_BASE "0123456789abcdef"
 # define HEXADECIMAL_U_BASE "0123456789ABCDEF"
 

@@ -25,6 +25,8 @@ void	ft_type_specifier(t_format *fmt, t_holder *h)
 	else if (h->specifier == 'u')
 		ft_convert_ux(fmt, h, DECIMAL_BASE);
 	else if (h->specifier == 'x')
+		ft_convert_ux(fmt, h, OCTAL_BASE);
+	else if (h->specifier == 'x')
 		ft_convert_ux(fmt, h, HEXADECIMAL_L_BASE);
 	else if (h->specifier == 'X')
 		ft_convert_ux(fmt, h, HEXADECIMAL_U_BASE);
