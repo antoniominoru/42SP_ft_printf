@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:50:00 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/29 19:30:30 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/29 22:14:15 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_uitoa(unsigned int nbr, char *base)
 	size_t	len_base;
 	char	*str_num;
 
-	len_base = ft_strlen(base); 
+	len_base = ft_strlen(base);
 	len_nbr = ft_countsize(nbr, len_base);
 	str_num = malloc ((len_nbr + 1) * sizeof(char));
 	if (!str_num)
