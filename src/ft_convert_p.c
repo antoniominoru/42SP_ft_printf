@@ -6,11 +6,26 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:49:29 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/31 21:02:32 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/31 21:04:32 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+static char	*ft_nullset(t_holder *h)
+{
+	if (h->precision > -1)
+	{
+		number = malloc((h->precision + 1) * sizeof(char));
+		if (!number)
+			return (NULL);
+		ft_memset(number, '0', h->precision);
+		number[h->precision] = '\0';
+	}
+	else
+		number = ft_strdup("0");
+	return (number);
+}
 
 void	ft_convert_p(t_format *fmt, t_holder *h)
 {
@@ -30,19 +45,4 @@ void	ft_convert_p(t_format *fmt, t_holder *h)
 	else
 		ft_fill_rigth_pad(&h->argument, SPACE, h->width);
 	h->len = ft_strlen(h->argument);
-}
-
-static char	*ft_nullset(t_holder *h)
-{
-	if (h->precision > -1)
-	{
-		number = malloc((h->precision + 1) * sizeof(char));
-		if (!number)
-			return (NULL);
-		ft_memset(number, '0', h->precision);
-		number[h->precision] = '\0';
-	}
-	else
-		number = ft_strdup("0");
-	return (number);
 }
