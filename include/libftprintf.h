@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:10:53 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/29 21:49:33 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/31 20:46:06 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@
 # define HEXADECIMAL_U_BASE "0123456789ABCDEF"
 
 # define SPACE ' '
+# define PLUS '+'
+# define MINUS '-'
+# define PREFIX_OCTAL "0"
+# define PREFIX_HEX_L "0x"
+# define PREFIX_HEX_U "0X"
 
 typedef struct s_format
 {
@@ -78,5 +83,10 @@ char	*ft_uitoa(unsigned long nbr, char *base);
 void	ft_convert_c(t_format *fmt, t_holder *h);
 void	ft_convert_s(t_format *fmt, t_holder *h);
 void	ft_convert_ux(t_format *fmt, t_holder *h, char *base);
+
+// Convert utils
+void	ft_add_prefix(t_holder *h, int sign);
+void	ft_fill_left_pad(char **src, char padding, int width);
+void	ft_fill_right_pad(char **src, char padding, int width);
 
 #endif
