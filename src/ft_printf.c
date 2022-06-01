@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:03:39 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/28 14:28:03 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/31 23:31:20 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_printf(const char *format, ...)
 	int		len;
 
 	if (format == NULL)
-		return (NULL);
+		return (0);
 	va_start(ap, format);
 	len = ft_vprintf(format, ap);
 	va_end(ap);
@@ -32,7 +32,7 @@ int	ft_vprintf(const char *format, va_list ap)
 
 	fmt = ft_inicialize_stdout(format, ap);
 	if (!fmt)
-		return (NULL);
+		return (0);
 	while (fmt->format[fmt->i])
 	{
 		if (fmt->format[fmt->i] == '%')

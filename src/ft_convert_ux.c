@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 19:23:57 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/29 21:42:43 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/31 23:44:40 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ void	ft_convert_ux(t_format *fmt, t_holder *h, char *base)
 	if (!h->left_justify)
 		ft_fill_left_pad(&h->argument, h->padding, h->width);
 	else
-		ft_fill_rigth_pad(&h->argument, SPACE, h->width);
+		ft_fill_right_pad(&h->argument, SPACE, h->width);
 	h->len = ft_strlen(h->argument);
 }

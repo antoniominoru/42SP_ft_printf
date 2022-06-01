@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 22:05:18 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/31 20:43:54 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/06/01 15:17:35 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_prefix_ux(t_holder *h)
 			h->argument = ft_strjoin(PREFIX_HEX_U, tmp);
 		if (h->specifier == 'o')
 			h->argument = ft_strjoin(PREFIX_OCTAL, tmp);
-		free(temp);
+		free(tmp);
 	}
 }
 
@@ -55,16 +55,18 @@ void	ft_add_prefix(t_holder *h, int sign)
 void	ft_fill_left_pad(char **src, char padding, int width)
 {
 	char	*tmp;
-	int		len;
+	size_t	len;
+	size_t	padlen;
 
 	len = ft_strlen(*src);
-	if (!width || width < len)
+	if (!width || width < (int)len)
 		width = len;
-	tmp = malloc(width * sizeof(char));
+	tmp = malloc((width + 1) * sizeof(char));
 	if (!tmp)
 		return ;
-	ft_memset(tmp, padding, (width - len));
-	tmp[(width - len)] = '\0';
+	padlen = width - len;
+	ft_memset(tmp, padding, padlen);
+	tmp[padlen] = '\0';
 	ft_strlcat(tmp, *src, width + 1);
 	free(*src);
 	*src = tmp;
@@ -73,16 +75,18 @@ void	ft_fill_left_pad(char **src, char padding, int width)
 void	ft_fill_right_pad(char **src, char padding, int width)
 {
 	char	*tmp;
-	int		len;
+	size_t	len;
+	size_t	padlen;
 
 	len = ft_strlen(*src);
-	if (!width || width < len)
+	if (!width || width < (int)len)
 		width = len;
-	tmp = malloc(width * sizeof(char));
+	tmp = malloc((width + 1)* sizeof(char));
 	if (!tmp)
 		return ;
+	padlen = width - len;
 	ft_strlcpy(tmp, *src, len +1);
-	ft_memset(&tmp[len], padding, (width - len));
+	ft_memset(&tmp[len], padding, padlen);
 	tmp[width] = '\0';
 	free(*src);
 	*src = tmp;

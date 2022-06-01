@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 16:42:14 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/28 19:01:56 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/31 23:30:02 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	*ft_format_specifiers(t_format *fmt, t_holder *h)
 {
-	ft_fs_sub_specifier(fmt, h);
+	// ft_fs_flags(fmt, h);
+	// ft_fs_width(fmt, h);
+	// ft_fs_precision(fmt, h);
 	ft_fs_specifier(fmt, h);
 	if (!h->specifier && (ft_strchr(P_HOLDER_ALL, fmt->format[fmt->i])))
 		ft_format_specifiers(fmt, h);

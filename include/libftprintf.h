@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:10:53 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/31 21:07:53 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/31 23:52:28 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define P_HOLDER_LEFT_PADS '0'
 # define P_HOLDER_STAR '*'
 # define P_HOLDER_PRECISION '.'
+# define P_HOLDER_PREFIX "# +"
 
 # define DECIMAL_BASE "0123456789"
 # define OCTAL_BASE "01234567"
@@ -73,6 +74,7 @@ void	ft_fs_flags(t_format *fmt, t_holder *h);
 void	ft_fs_width(t_format *fmt, t_holder *h);
 void	ft_fs_precision(t_format *fmt, t_holder *h);
 void	ft_fs_specifier(t_format *fmt, t_holder *h);
+void	ft_type_specifier(t_format *fmt, t_holder *h);
 
 // Adicional function to LIBFT
 char	*ft_appendchr(char const *s, char const ch);

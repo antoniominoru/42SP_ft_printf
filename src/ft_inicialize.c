@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:34:36 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/28 18:51:34 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:29:09 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,32 @@
 
 t_format	*ft_inicialize_stdout(const char *format, va_list ap)
 {
-	t_format	*start;
+	t_format	*fmt;
 
-	start = malloc(sizeof(t_format));
-	if (!start)
+	fmt = malloc(sizeof(t_format));
+	if (!fmt)
 		return (NULL);
-	start->format = format;
-	va_copy(start->ap, ap);
-	start->i = 0;
-	start->len = 0;
-	return (start);
+	fmt->format = format;
+	va_copy(fmt->ap, ap);
+	fmt->i = 0;
+	fmt->len = 0;
+	return (fmt);
 }
 
 t_holder	*ft_inicialize_placeholder(void)
 {
-	t_holder	*holder;
+	t_holder	*h;
 
-	holder = malloc(sizeof(t_holder));
-	if (!holder)
+	h = malloc(sizeof(t_holder));
+	if (!h)
 		return (NULL);
-	holder->left_justify = 0;
-	holder->width = 0;
-	holder->precision = -1;
-	holder->padding = ' ';
-	holder->specifier = '\0';
-	holder->*argument = NULL;
-	holder->*prefix = ft_strup("");
-	holder->len = 0;
-	return (holder);
+	h->left_justify = 0;
+	h->width = 0;
+	h->precision = -1;
+	h->padding = ' ';
+	h->specifier = '\0';
+	h->argument = NULL;
+	h->prefix = ft_strdup("");
+	h->len = 0;
+	return (h);
 }

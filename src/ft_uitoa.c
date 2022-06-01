@@ -6,13 +6,13 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:50:00 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/29 22:14:15 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/31 23:45:19 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static size_t	ft_countsize(unsigned int n, size_t len_base)
+static size_t	ft_countsize(unsigned long n, size_t len_base)
 {
 	if ((n / len_base) == 0)
 		return (1);
@@ -20,17 +20,17 @@ static size_t	ft_countsize(unsigned int n, size_t len_base)
 		return (1 + ft_countsize((n / len_base), len_base));
 }
 
-static void	ft_convbase(unsigned int nbr, char *n, char *base, size_t i)
+static void	ft_convbase(unsigned long nbr, char *n, char *base, size_t i)
 {
 	size_t	len_base;
 
 	len_base = ft_strlen(base);
-	if (nbr >= (unsigned int)len_base)
+	if (nbr >= (unsigned long)len_base)
 		ft_convbase((nbr / len_base), n, base, (i -1));
-	num[i] = base[nbr % len_base];
+	n[i] = base[nbr % len_base];
 }
 
-char	*ft_uitoa(unsigned int nbr, char *base)
+char	*ft_uitoa(unsigned long nbr, char *base)
 {
 	size_t	len_nbr;
 	size_t	len_base;

@@ -6,7 +6,7 @@
 #    By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 16:30:03 by aminoru-          #+#    #+#              #
-#    Updated: 2022/04/26 22:19:20 by aminoru-         ###   ########.fr        #
+#    Updated: 2022/05/31 23:14:42 by aminoru-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	libft.a
 
 CC		=	gcc
 CFLAGS	=	-Wall -Werror -Wextra
-
+INCS	= libft.h
 SRCS	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 			ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c \
 			ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c \
@@ -31,7 +31,7 @@ OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
 
 all: 		${NAME}
 
-${NAME}: 	${OBJS}
+${NAME}: 	${OBJS} $(INCS)
 				ar -rcs ${NAME} ${OBJS}
 				ranlib ${NAME}
 

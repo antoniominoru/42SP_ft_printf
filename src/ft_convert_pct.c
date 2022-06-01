@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:53:12 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/29 22:15:02 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/31 23:49:54 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_convert_pct(t_holder *h)
 {
-	h->argument = ft_appendchr("", h->conversion);
+	h->argument = ft_appendchr("", h->specifier);
 	if (!h->left_justify)
 		ft_fill_left_pad(&h->argument, h->padding, h->width);
 	else
-		ft_fill_rigth_pad(&h->argument, SPACE, h->width);
+		ft_fill_right_pad(&h->argument, SPACE, h->width);
 	h->len = ft_strlen(h->argument);
 }

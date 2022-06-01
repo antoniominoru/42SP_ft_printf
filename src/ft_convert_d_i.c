@@ -6,38 +6,18 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 21:07:12 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/31 22:47:53 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/31 23:47:52 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-
-void	ft_convert_d_i(t_format *fmt, t_holder *h)
-{
-	arg = va_arg(fmt->ap, int);
-	if (arg < 0)
-		sign *= -1;
-	h->argument = ft_uitoa(sign * arg, DECIMAL_BASE);
-	if (h->precision > -1)
-	{
-		if (!h->precision && arg == 0)
-		{
-			free(h->argument);
-			h->argument = ft_strdup("");
-		}
-		ft_fill_left_pad(&h->argument, '0', h->precision);
-		h->padding = SPACE;
-	}
-	ft_convert_d_i_width(h, sign);
-	h->len = ft_strlen(h->argument);
-}
 
 static void	ft_convert_d_i_width(t_holder *h, int sign)
 {
 	if (h->left_justify)
 	{
 		ft_add_prefix(h, sign);
-		ft_fill_rigth_pad(&h->argument, SPACE, h->width);
+		ft_fill_right_pad(&h->argument, SPACE, h->width);
 	}
 	else
 	{
@@ -59,4 +39,28 @@ static void	ft_convert_d_i_width(t_holder *h, int sign)
 			ft_add_prefix(h, sign);
 		}
 	}
+}
+
+void	ft_convert_d_i(t_format *fmt, t_holder *h)
+{
+	int			sign;
+	long int	arg;
+
+	sign = 1;
+	arg = va_arg(fmt->ap, int);
+	if (arg < 0)
+		sign *= -1;
+	h->argument = ft_uitoa(sign * arg, DECIMAL_BASE);
+	if (h->precision > -1)
+	{
+		if (!h->precision && arg == 0)
+		{
+			free(h->argument);
+			h->argument = ft_strdup("");
+		}
+		ft_fill_left_pad(&h->argument, '0', h->precision);
+		h->padding = SPACE;
+	}
+	ft_convert_d_i_width(h, sign);
+	h->len = ft_strlen(h->argument);
 }

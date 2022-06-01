@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:49:29 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/31 21:04:32 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/05/31 23:44:02 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static char	*ft_nullset(t_holder *h)
 {
+	char *number;
+
 	if (h->precision > -1)
 	{
 		number = malloc((h->precision + 1) * sizeof(char));
@@ -37,12 +39,12 @@ void	ft_convert_p(t_format *fmt, t_holder *h)
 	if (!ptr)
 		number = ft_nullset(h);
 	else
-		number = ft_uitoa((unsigned int)ptr, HEXADECIMAL_L_BASE);
+		number = ft_uitoa((unsigned long)ptr, HEXADECIMAL_L_BASE);
 	h->argument = ft_strjoin(PREFIX_HEX_L, number);
 	free(number);
 	if (!h->left_justify)
 		ft_fill_left_pad(&h->argument, SPACE, h->width);
 	else
-		ft_fill_rigth_pad(&h->argument, SPACE, h->width);
+		ft_fill_right_pad(&h->argument, SPACE, h->width);
 	h->len = ft_strlen(h->argument);
 }
