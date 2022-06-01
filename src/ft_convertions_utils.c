@@ -6,11 +6,11 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 22:05:18 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/06/01 15:17:35 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/06/01 23:23:41 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static void	ft_prefix_ux(t_holder *h)
 {
@@ -44,11 +44,8 @@ void	ft_add_prefix(t_holder *h, int sign)
 		else if (sign == -1)
 			ft_fill_left_pad(&h->argument, MINUS, len);
 	}
-	else if (h->specifier == 'x')
-		ft_prefix_ux(h);
-	else if (h->specifier == 'X')
-		ft_prefix_ux(h);
-	else if (h->specifier == 'o')
+	else if (h->specifier == 'x' || h->specifier == 'X' \
+			|| h->specifier == 'o')
 		ft_prefix_ux(h);
 }
 

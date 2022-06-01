@@ -6,11 +6,11 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:50:00 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/31 23:45:19 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/06/01 20:24:00 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static size_t	ft_countsize(unsigned long n, size_t len_base)
 {

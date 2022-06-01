@@ -6,11 +6,11 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:49:29 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/31 23:44:02 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/06/01 20:22:45 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static char	*ft_nullset(t_holder *h)
 {
@@ -21,7 +21,7 @@ static char	*ft_nullset(t_holder *h)
 		number = malloc((h->precision + 1) * sizeof(char));
 		if (!number)
 			return (NULL);
-		ft_memset(number, '0', h->precision);
+		ft_memset(number, '0', (size_t)h->precision);
 		number[h->precision] = '\0';
 	}
 	else

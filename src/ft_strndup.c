@@ -6,11 +6,11 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 15:01:55 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/29 15:08:27 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/06/01 20:23:47 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 char	*ft_strndup(const char *s1, size_t n)
 {

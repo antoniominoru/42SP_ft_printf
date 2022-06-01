@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_type_specifier(t_format *fmt, t_holder *h)
 {
@@ -24,7 +24,7 @@ void	ft_type_specifier(t_format *fmt, t_holder *h)
 		ft_convert_d_i(fmt, h);
 	else if (h->specifier == 'u')
 		ft_convert_ux(fmt, h, DECIMAL_BASE);
-	else if (h->specifier == 'x')
+	else if (h->specifier == 'o')
 		ft_convert_ux(fmt, h, OCTAL_BASE);
 	else if (h->specifier == 'x')
 		ft_convert_ux(fmt, h, HEXADECIMAL_L_BASE);

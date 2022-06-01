@@ -6,11 +6,11 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 21:07:12 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/31 23:47:52 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/06/01 20:22:39 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static void	ft_convert_d_i_width(t_holder *h, int sign)
 {

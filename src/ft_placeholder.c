@@ -6,11 +6,11 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:48:44 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/06/01 00:37:44 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/06/01 20:23:35 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_placeholder(t_format *fmt)
 {

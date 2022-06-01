@@ -6,11 +6,11 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 18:54:17 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/05/31 23:30:10 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/06/01 23:14:08 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_fs_flags(t_format *fmt, t_holder *h)
 {
@@ -39,7 +39,7 @@ void	ft_fs_width(t_format *fmt, t_holder *h)
 	int	width;
 
 	width = h->width;
-	if (fmt->format[fmt->i == P_HOLDER_STAR])
+	if (fmt->format[fmt->i] == P_HOLDER_STAR)
 	{
 		width = va_arg(fmt->ap, int);
 		if (width < 0)
