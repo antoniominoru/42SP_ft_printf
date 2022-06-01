@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:49:29 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/06/01 20:22:45 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/06/02 00:55:24 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_convert_p(t_format *fmt, t_holder *h)
 	number = NULL;
 	ptr = va_arg(fmt->ap, void *);
 	if (!ptr)
-		number = ft_nullset(h);
+		number = ft_nullset(h);	
 	else
 		number = ft_uitoa((unsigned long)ptr, HEXADECIMAL_L_BASE);
 	h->argument = ft_strjoin(PREFIX_HEX_L, number);
