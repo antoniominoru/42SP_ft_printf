@@ -30,6 +30,6 @@ void	ft_type_specifier(t_format *fmt, t_holder *h)
 		ft_convert_ux(fmt, h, HEXADECIMAL_L_BASE);
 	else if (h->specifier == 'X')
 		ft_convert_ux(fmt, h, HEXADECIMAL_U_BASE);
-	else
+	else if (h->specifier == '%')
 		ft_convert_pct(h);
 }
