@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 22:05:18 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/06/01 23:23:41 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/06/02 16:44:06 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ft_fill_right_pad(char **src, char padding, int width)
 	len = ft_strlen(*src);
 	if (!width || width < (int)len)
 		width = len;
-	tmp = malloc((width + 1)* sizeof(char));
+	tmp = malloc((width + 1) * sizeof(char));
 	if (!tmp)
 		return ;
 	padlen = width - len;

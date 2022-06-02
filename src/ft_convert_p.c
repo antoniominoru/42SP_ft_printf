@@ -6,28 +6,11 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:49:29 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/06/02 00:55:24 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/06/02 16:43:31 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static char	*ft_nullset(t_holder *h)
-{
-	char *number;
-
-	if (h->precision > -1)
-	{
-		number = malloc((h->precision + 1) * sizeof(char));
-		if (!number)
-			return (NULL);
-		ft_memset(number, '0', (size_t)h->precision);
-		number[h->precision] = '\0';
-	}
-	else
-		number = ft_strdup("0");
-	return (number);
-}
 
 void	ft_convert_p(t_format *fmt, t_holder *h)
 {
@@ -37,7 +20,12 @@ void	ft_convert_p(t_format *fmt, t_holder *h)
 	number = NULL;
 	ptr = va_arg(fmt->ap, void *);
 	if (!ptr)
-		number = ft_nullset(h);	
+	{
+		h->argument = ft_strdup("(nil)");
+		free(number);
+		h->len = 5;
+		return ;
+	}
 	else
 		number = ft_uitoa((unsigned long)ptr, HEXADECIMAL_L_BASE);
 	h->argument = ft_strjoin(PREFIX_HEX_L, number);

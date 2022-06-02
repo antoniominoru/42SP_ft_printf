@@ -6,7 +6,7 @@
 /*   By: aminoru- <aminoru-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:10:53 by aminoru-          #+#    #+#             */
-/*   Updated: 2022/06/01 23:39:12 by aminoru-         ###   ########.fr       */
+/*   Updated: 2022/06/02 16:46:45 by aminoru-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,39 +59,39 @@ typedef struct s_holder
 	size_t	len;
 }				t_holder;
 
-int	ft_printf(const char *, ...);
-int	ft_vprintf(const char *format, va_list ap);
+int			ft_printf(const char *format, ...);
+int			ft_vprintf(const char *format, va_list ap);
 
 // Structs inicialization
 t_format	*ft_inicialize_stdout(const char *format, va_list ap);
 t_holder	*ft_inicialize_placeholder(void);
 
 // Placeholder
-void	ft_placeholder(t_format *fmt);
-void	*ft_format_specifiers(t_format *fmt, t_holder *h);
-void	*ft_sub_specifier(t_format *fmt, t_holder *h);
-void	ft_fs_flags(t_format *fmt, t_holder *h);
-void	ft_fs_width(t_format *fmt, t_holder *h);
-void	ft_fs_precision(t_format *fmt, t_holder *h);
-void	ft_fs_specifier(t_format *fmt, t_holder *h);
-void	ft_type_specifier(t_format *fmt, t_holder *h);
+void		ft_placeholder(t_format *fmt);
+void		*ft_format_specifiers(t_format *fmt, t_holder *h);
+void		*ft_sub_specifier(t_format *fmt, t_holder *h);
+void		ft_fs_flags(t_format *fmt, t_holder *h);
+void		ft_fs_width(t_format *fmt, t_holder *h);
+void		ft_fs_precision(t_format *fmt, t_holder *h);
+void		ft_fs_specifier(t_format *fmt, t_holder *h);
+void		ft_type_specifier(t_format *fmt, t_holder *h);
 
 // Adicional function to LIBFT
-char	*ft_appendchr(char const *s, char const ch);
-char	*ft_strndup(const char *s1, size_t n);
-char	*ft_uitoa(unsigned long nbr, char *base);
+char		*ft_appendchr(char const *s, char const ch);
+char		*ft_strndup(const char *s1, size_t n);
+char		*ft_uitoa(unsigned long nbr, char *base);
 
 // Convert functions
-void	ft_convert_c(t_format *fmt, t_holder *h);
-void	ft_convert_s(t_format *fmt, t_holder *h);
-void	ft_convert_ux(t_format *fmt, t_holder *h, char *base);
-void	ft_convert_p(t_format *fmt, t_holder *h);
-void	ft_convert_pct(t_holder *h);
-void	ft_convert_d_i(t_format *fmt, t_holder *h);
+void		ft_convert_c(t_format *fmt, t_holder *h);
+void		ft_convert_s(t_format *fmt, t_holder *h);
+void		ft_convert_ux(t_format *fmt, t_holder *h, char *base);
+void		ft_convert_p(t_format *fmt, t_holder *h);
+void		ft_convert_pct(t_holder *h);
+void		ft_convert_d_i(t_format *fmt, t_holder *h);
 
 // Convert utils
-void	ft_add_prefix(t_holder *h, int sign);
-void	ft_fill_left_pad(char **src, char padding, int width);
-void	ft_fill_right_pad(char **src, char padding, int width);
+void		ft_add_prefix(t_holder *h, int sign);
+void		ft_fill_left_pad(char **src, char padding, int width);
+void		ft_fill_right_pad(char **src, char padding, int width);
 
 #endif
